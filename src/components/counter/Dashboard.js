@@ -12,7 +12,7 @@ export const Dashboard = ({}) => {
       <View style={styles.screen}>
         <Text style={styles.number}>{counter}</Text>
       </View>
-      <View styles={styles.buttonContainer}>
+      <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
           onPress={() => dispatch(increment())}>
@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     elevation: 3,
     borderColor: '#6d6d6d',
     borderWidth: 1,
+    flexDirection: 'column',
   },
   screen: {
     backgroundColor: '#fff',
@@ -50,20 +51,19 @@ const styles = StyleSheet.create({
     fontSize: 30,
   },
   buttonContainer: {
-    flex: 1,
     flexDirection: 'row',
-    backgroundColor: '#fff',
-    width: '100%',
-    height: 40,
+    flex: 1,
+    justifyContent: 'center',
   },
   button: {
-    height: 50,
-    width: 50,
-    borderRadius: 25,
+    height: 60,
+    width: 60,
+    borderRadius: 30,
     backgroundColor: '#2f67c7',
     alignItems: 'center',
     justifyContent: 'center',
     elevation: 4,
+    margin: 20,
   },
   buttonText: {
     fontSize: 30,

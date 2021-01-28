@@ -1,25 +1,15 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {Search} from './src/screens/Search';
 import {Counter} from './src/screens/Counter';
-import {createStore} from 'redux';
-import rootReducers from './src/reducers/index';
 import {Provider} from 'react-redux';
 import store from './src/store';
 
 const Tab = createMaterialTopTabNavigator();
 
-const App: () => React$Node = () => {
+const App = () => {
   return (
     <Provider store={store}>
       <NavigationContainer>
