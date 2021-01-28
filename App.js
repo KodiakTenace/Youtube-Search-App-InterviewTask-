@@ -15,12 +15,7 @@ import {Counter} from './src/screens/Counter';
 import {createStore} from 'redux';
 import rootReducers from './src/reducers/index';
 import {Provider} from 'react-redux';
-
-let store = createStore(rootReducers);
-
-// store.subscribe(() => console.log(store.getState()));
-//
-// store.dispatch(increment());
+import store from './src/store';
 
 const Tab = createMaterialTopTabNavigator();
 
