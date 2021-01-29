@@ -1,12 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, TextInput, View, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import {useDispatch} from 'react-redux';
+import {getVideos} from '../../actions';
 
 export const SearchInput = ({}) => {
+  const dispatch = useDispatch();
+
+  const [query, setQuery] = useState('gme');
+
+  const handleSearch = () => {
+    dispatch(getVideos(query, 1));
+  };
+
   return (
     <View style={styles.container}>
-      <TextInput style={styles.textInput} />
-      <TouchableOpacity style={styles.button}>
+      <TextInput
+        style={styles.textInput}
+        value={query}
+        onChangeText={(text) => setQuery(text)}
+      />
+      <TouchableOpacity style={styles.button} onPress={handleSearch}>
         <Icon name="search" size={20} color="white" />
       </TouchableOpacity>
     </View>
@@ -18,6 +32,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     height: 60,
     padding: 10,
+    marginBottom: 10,
   },
   textInput: {
     height: 50,

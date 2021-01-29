@@ -1,21 +1,22 @@
 import React from 'react';
-import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {Image, View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 
-export const VideoItem = ({navigation}) => {
+export const VideoItem = ({navigation, video}) => {
   return (
     <TouchableOpacity
       onPress={() => {
-        navigation.navigate('Video Details');
+        navigation.navigate('Video Details', {video: video});
       }}>
       <View style={styles.cardContainer}>
         <View style={styles.imageContainer}>
-          <Text>Image</Text>
+          <Image
+            style={styles.image}
+            source={{uri: video.item.snippet.thumbnails.medium.url}}
+          />
         </View>
         <View style={styles.detailsContainer}>
-          <Text style={styles.title}>
-            This the title of the video that may be long enough to be two lines
-          </Text>
-          <Text style={styles.details}>Channel Details</Text>
+          <Text style={styles.title}>{video.item.snippet.title}</Text>
+          <Text style={styles.details}>{video.item.snippet.channelTitle}</Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -24,13 +25,12 @@ export const VideoItem = ({navigation}) => {
 
 const styles = StyleSheet.create({
   cardContainer: {
-    // height: 300,
-    borderWidth: 1,
+    height: 320,
     marginTop: 10,
+    backgroundColor: '#fff',
   },
   imageContainer: {
     height: '70%',
-    borderWidth: 1,
   },
   detailsContainer: {
     flex: 1,
@@ -42,5 +42,8 @@ const styles = StyleSheet.create({
   },
   details: {
     fontSize: 15,
+  },
+  image: {
+    flex: 1,
   },
 });

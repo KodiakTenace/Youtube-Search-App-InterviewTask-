@@ -4,10 +4,11 @@ import {setVideos} from '../../actions';
 
 export function* handleGetVideos(action) {
   try {
-    const response = yield call(requestGetVideos);
+    const response = yield call(requestGetVideos, action.query, action.page);
     const {data} = response;
+    console.log('data', data);
     yield put(setVideos(data));
   } catch (error) {
-    console.log(error);
+    console.log('videos_api', error);
   }
 }

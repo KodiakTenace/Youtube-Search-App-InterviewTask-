@@ -8,8 +8,18 @@ const Stack = createStackNavigator();
 export const SearchStack = ({}) => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Youtube Search" component={Search} />
-      <Stack.Screen name="Video Details" component={VideoDetails} />
+      <Stack.Screen
+        name="Youtube Search"
+        component={Search}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        options={({route}) => ({
+          headerTitle: route.params.video.item.snippet.channelTitle,
+        })}
+        name="Video Details"
+        component={VideoDetails}
+      />
     </Stack.Navigator>
   );
 };

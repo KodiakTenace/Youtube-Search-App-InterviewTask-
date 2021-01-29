@@ -13,10 +13,11 @@ export const decrement = () => {
 export const GET_VIDEOS = 'GET_VIDEOS';
 export const SET_VIDEOS = 'SET_VIDEOS';
 
-export const getVideos = (query) => {
+export const getVideos = (query, page) => {
   return {
     type: GET_VIDEOS,
-    payload: query,
+    query,
+    page,
   };
 };
 
