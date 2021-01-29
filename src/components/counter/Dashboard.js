@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
-import {increment, decrement} from '../../actions';
+import {increment, decrement} from '../../redux/actions';
 
 export const Dashboard = ({}) => {
   const counter = useSelector((state) => state.counter);

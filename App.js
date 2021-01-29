@@ -3,7 +3,7 @@ import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import {Provider} from 'react-redux';
-import store from './src/store';
+import store from './src/redux/store';
 import {MainTabs} from './src/navigation/MainTabs';
 
 const Tab = createMaterialTopTabNavigator();

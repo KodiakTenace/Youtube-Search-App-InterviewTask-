@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {StyleSheet, TextInput, View, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {useDispatch} from 'react-redux';
-import {getVideos} from '../../actions';
+import {getVideos} from '../../redux/actions';
 
 export const SearchInput = ({}) => {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ export const SearchInput = ({}) => {
   const [query, setQuery] = useState('');
 
   const handleSearch = () => {
-    dispatch(getVideos(query, 1));
+    dispatch(getVideos(query, ''));
   };
 
   return (

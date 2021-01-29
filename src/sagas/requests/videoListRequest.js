@@ -4,16 +4,14 @@ import axios from 'axios';
 const API_KEY = 'AIzaSyA9uTGHnBm00mjO2mK8iiLKT9JiEkPmBic';
 
 export function requestGetVideos(query, page) {
-  console.log('calling');
-  console.log(API_KEY);
-  console.log('query', query);
-  console.log('page', page);
+  const pageToken = page ? page : null;
+
   return axios.get('https://www.googleapis.com/youtube/v3/search', {
     params: {
       part: 'snippet',
-      maxResults: 6,
+      maxResults: 10,
       q: query,
-      // pageToken: page,
+      pageToken: pageToken,
       key: API_KEY,
     },
   });
