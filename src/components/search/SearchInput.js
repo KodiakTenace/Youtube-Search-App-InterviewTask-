@@ -7,7 +7,7 @@ import {getVideos} from '../../actions';
 export const SearchInput = ({}) => {
   const dispatch = useDispatch();
 
-  const [query, setQuery] = useState('gme');
+  const [query, setQuery] = useState('');
 
   const handleSearch = () => {
     dispatch(getVideos(query, 1));

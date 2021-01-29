@@ -6,7 +6,7 @@ export function* handleGetVideos(action) {
   try {
     const response = yield call(requestGetVideos, action.query, action.page);
     const {data} = response;
-    console.log('data', data);
+    // console.log('data', data);
     yield put(setVideos(data));
   } catch (error) {
     console.log('videos_api', error);
