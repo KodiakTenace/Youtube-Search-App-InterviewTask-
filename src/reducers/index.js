@@ -1,11 +1,11 @@
 import counterReducer from './counterReducer';
-import loggedReducer from './isLoggedReducer';
+import videoListReducer from './videoListReducer';
 
 import {combineReducers} from 'redux';
 
 const rootReducer = combineReducers({
   counter: counterReducer,
-  isLogged: loggedReducer,
+  videoList: videoListReducer,
 });
 
 export default rootReducer;
