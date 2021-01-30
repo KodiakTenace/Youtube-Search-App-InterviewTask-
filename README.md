@@ -25,8 +25,8 @@ You can start by cloning this repository.
 
 After that you should proceed with following:
 - Go to your project's root folder and run `npm install`.
-- Copy `.env.example` and rename it to `.env` to store your . Remember to not commit this file, since it can store sensible information of your product.
-- Run  `npx react-native start` to start metro server
+- Copy `.env.example` and rename it to `.env` to store your Youtube API Key. Remember to not commit this file, since it can store sensible information of your product.
+- Run  `npx react-native start` to start metro server.
 - Run  `npx react-native run-android` to start your application!
 
 
