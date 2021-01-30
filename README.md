@@ -69,7 +69,7 @@ This project follows a very simple project structure:
 - `index.js`: Entry point of your application as per React-Native standards.
 
 ## TODO
-Unit testing using Jest
+Additional unit testing 
 
 
 
