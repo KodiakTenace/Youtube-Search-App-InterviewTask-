@@ -1,7 +1,5 @@
 import axios from 'axios';
-
-// const API_KEY = process.env.REACT_APP_YT_API_KEY;
-const API_KEY = 'AIzaSyA9uTGHnBm00mjO2mK8iiLKT9JiEkPmBic';
+import {YT_API_KEY} from '@env';
 
 export function requestGetVideos(query, page) {
   const pageToken = page ? page : null;
@@ -12,7 +10,7 @@ export function requestGetVideos(query, page) {
       maxResults: 10,
       q: query,
       pageToken: pageToken,
-      key: API_KEY,
+      key: YT_API_KEY,
     },
   });
 }
