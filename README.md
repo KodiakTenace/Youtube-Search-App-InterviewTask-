@@ -23,6 +23,8 @@ React Native project with two functionalities:
 
 You can start by cloning this repository. 
 
+`$ git clone https://github.com/KodiakTenace/Youtube-Search-App-InterviewTask-.git`
+
 After that you should proceed with following:
 - Go to your project's root folder and run `npm install`.
 - Copy `.env.example` and rename it to `.env` to store your Youtube API Key. Remember to not commit this file, since it can store sensible information of your product.
